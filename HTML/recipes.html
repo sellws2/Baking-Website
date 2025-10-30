@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" type="text/CSS" href="../CSS/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    
+    <!--------------------------------NAVIGATION------------------------------>
+
+    <!--SECTION 1-- //section 1 put in nav and main so the background image is seen through transparent navbar--> 
+
+    <section class="sectionOne">
+        <nav>
+
+            <!--website name/logo-->
+            <div class="logo"> 
+                <p><a href="../index.html">SIMPLE SWEETS</a></p>
+            </div>
+
+            <!--navigation links-->
+            <div class="navLinks">
+                <a href="../index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="cookbook.html">COOKBOOK</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+
+            <!--nav search bar-->
+            <div class="navSearchBar">
+                <input id="navSearch" type="text" placeholder="Search">
+                <button id="navSearchBtn" type="submit">&#8981;</button>
+            </div>
+
+            <!--hamburger menu-->
+            <div id="hamburgerMenu">
+                <p onclick="openNav()"> &#9776; </p>
+            </div>
+        </nav>
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closeIcon" onclick="closeNav()">&times;</a>
+            <div class="overlayContent">
+                <a href="../index.html">HOME</a>
+                <div class="dropdown">
+                <a href="#" class="dropdownToggle">RECIPES &#9662;</a>
+                    <div class="dropdownContent">
+                        <a href="recipes.html">All Recipes</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Cupcakes</a>
+                        <a href="#">Pies</a>
+                        <a href="#">Cakes</a>
+                        <a href="#">Slices</a>
+                        <a href="#">Muffins</a>
+                        <a href="#">Pastries</a>
+                        <a href="#">Cheesecakes</a>
+                    </div>
+                </div>
+                <a href="cookbook.html">COOKBOOKS</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </div>
+
+        <!--javascript for curtain menu-->
+        <script>
+            //Opens the curtain menu
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+                document.body.style.overflow = "hidden"; //Disables scroll
+            }
+            //Closes the curtain menu
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+                document.body.style.overflow = "auto"; //Enables scroll
+            }
+            //Listens for click event
+            document.addEventListener("click", function(event) {
+                //Checks if the menu is visible
+                if (myNav.style.display === "block") {
+                //Checks if the click target is outside the curtain menu
+                if (!myNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                //If it is, curtain menu closes
+                closeNav();
+                    }
+                }
+            });
+        </script>
+
+        <!--javascript for dropdown menu in curtain menu-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdownToggle = document.querySelector(".dropdownToggle");
+                const dropdownContent = document.querySelector(".dropdownContent");
+
+                //adds click event listener to toggle display of dropdown
+                dropdownToggle.addEventListener("click", function(event) {
+                    event.preventDefault(); // Prevents the link from navigating
+                    dropdownContent.classList.toggle("show");
+                });
+            });
+        </script>    
+
+    <!--------------------------------MAIN----------------------------------->
+
+<main>
+        
+        <div>  
+            <!--heading and text-->
+            <header id="homeHeader">
+            <h1>RECIPES</h1><br>
+            <p>Explore our sweet selection of recipes!</p>
+
+            <!--search bar-->
+            <div class="homeSearchBar">
+                <input id="homeSearch" type="text" placeholder="Search recipes...">
+                <button id="homeSearchBtn" type="submit">&#8981;</button>
+            </div>
+        </div>    
+    </section>
+
+    <!--SECTION 2-->
+
+    <!--filter button area-->
+    <section class="sectionTwoRecipes">
+        <div class="filterContainer">
+            <button class="filterBtn active" collectionId="0">All Recipes</button>
+            <button class="filterBtn" collectionId="1">Cookies</button>
+            <button class="filterBtn" collectionId="2">Cupcakes</button>
+            <button class="filterBtn" collectionId="3">Pies</button>
+            <button class="filterBtn" collectionId="4">Cakes</button>
+            <button class="filterBtn" collectionId="5">Slices</button>
+            <button class="filterBtn" collectionId="6">Muffins</button>
+            <button class="filterBtn" collectionId="7">Pastries</button>
+            <button class="filterBtn" collectionId="8">Cheesecakes</button>
+        </div>
+
+        
+    </section>
+
+    <!--SECTION 3-->
+
+    <section class="sectionThreeRecipes">
+            
+
+        <!--boxes for featured recipes-->
+        <div id="recipesList"></div>
+    
+        <div class="pageContainer">
+            <button id="pageLeft"><</button>
+            <button id="pageRight">></button>
+        </div>
+       
+    </section>
+</main>
+
+    <!--------------------------------FOOTER--------------------------------->
+    <footer>
+
+        <div class="newsletter">
+        <div class="footerImg"></div>
+            <div class="newsletterContent">
+                <p>Subscribe for our latest recipes!</p>
+                <div class="footerBarContainer">
+                    <input id="newsletterBar" type="text" placeholder="Your email address here">
+                    <button id="newsletterBtn" type="submit">&#8981;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footerLinks">
+            <p> | </p>
+            <a href="../index.html">HOME</a>
+            <a href="recipes.html">RECIPES</a>
+            <a href="cookbook.html">COOKBOOK</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <p> | </p>
+        </div>
+
+        <p id="copyright">AI and 3rd party images used for educational purposes</p>
+    </footer>
+
+<script src="../JavaScript/recipes.js"></script>
+
+</body>
+</html>

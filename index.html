@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/CSS" href="./CSS/style.css">
+
+</head>
+
+<body>
+    
+    <!--------------------------------NAVIGATION------------------------------>
+
+    <!--SECTION 1-- //section 1 put in nav and main so the background image is seen through transparent navbar--> 
+
+    <section class="sectionOne">
+        <nav>
+
+            <!--website name/logo-->
+            <div class="logo"> 
+                <p><a href="index.html">SIMPLE SWEETS</a></p>
+            </div>
+
+            <!--navigation links-->
+            <div class="navLinks">
+                <a href="index.html">HOME</a>
+                <a href="./HTML/recipes.html">RECIPES</a>
+                <a href="./HTML/cookbook.html">COOKBOOK</a>
+                <a href="./HTML/about.html">ABOUT</a>
+                <a href="./HTML/contact.html">CONTACT</a>
+            </div>
+
+            <!--nav search bar-->
+            <div class="navSearchBar">
+                <input id="navSearch" type="text" placeholder="Search">
+                <button id="navSearchBtn" type="submit">&#8981;</button>
+            </div>
+
+            <!--hamburger menu-->
+            <div id="hamburgerMenu">
+                <p onclick="openNav()"> &#9776; </p>
+            </div>
+        </nav>
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closeIcon" onclick="closeNav()">&times;</a>
+            <div class="overlayContent">
+                <a href="index.html">HOME</a>
+                <div class="dropdown">
+                <a href="#" class="dropdownToggle">RECIPES &#9662;</a>
+                    <div class="dropdownContent">
+                        <a href="./HTML/recipes.html">All Recipes</a>
+                        <!--link opens recipes.html with a filter-->
+                        <a href="#" class="filterLink" collectionId="1">Cookies</a>
+                        <a href="#" class="filterLink" collectionId="2">Cupcakes</a>
+                        <a href="#" class="filterLink" collectionId="3">Pies</a>
+                        <a href="#" class="filterLink" collectionId="4">Cakes</a>
+                        <a href="#" class="filterLink" collectionId="5">Slices</a>
+                        <a href="#" class="filterLink" collectionId="6">Muffins</a>
+                        <a href="#" class="filterLink" collectionId="7">Pastries</a>
+                        <a href="#" class="filterLink" collectionId="8">Cheesecakes</a>
+                    </div>
+                </div>
+                <a href="./HTML/cookbook.html">COOKBOOKS</a>
+                <a href="./HTML/about.html">ABOUT</a>
+                <a href="./HTML/contact.html">CONTACT</a>
+            </div>
+        </div>
+
+        <!--javascript for curtain menu-->
+        <script>
+            //Opens the curtain menu
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+                document.body.style.overflow = "hidden"; //Disables scroll
+            }
+            //Closes the curtain menu
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+                document.body.style.overflow = "auto"; //Enables scroll
+            }
+            //Listens for click event
+            document.addEventListener("click", function(event) {
+                //Checks if the menu is visible
+                if (myNav.style.display === "block") {
+                //Checks if the click target is outside the curtain menu
+                if (!myNav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                //If it is, curtain menu closes
+                closeNav();
+                    }
+                }
+            });
+        </script>
+
+        <!--javascript for dropdown menu in curtain menu-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdownToggle = document.querySelector(".dropdownToggle");
+                const dropdownContent = document.querySelector(".dropdownContent");
+
+                //Adds click event listener to toggle display of dropdown
+                dropdownToggle.addEventListener("click", function(event) {
+                    event.preventDefault(); // Prevents the link from navigating
+                    dropdownContent.classList.toggle("show");
+                });
+            });
+        </script>    
+
+        <!--javascript for curtain menu recipe collection list-->
+        <script>
+            //Adds click event listeners to filter links, to open recipes.html with filter applied
+            document.addEventListener("DOMContentLoaded", function() {
+                const filterLinks = document.querySelectorAll(".filterLink");
+
+                filterLinks.forEach(function(link) {
+                    link.addEventListener("click", function(event) {
+                        event.preventDefault(); // Prevents default link behavior
+
+                        const collectionId = link.getAttribute("collectionId");
+                        // Opens recipes.html with the collectionId as a URL parameter
+                        window.location.href = `./HTML/recipes.html?filter=${collectionId}`;
+                    });
+                });
+            });
+        </script>
+        
+    <!--------------------------------MAIN----------------------------------->
+
+<main>
+        
+        <div>  
+            <!--heading and text-->
+            <header id="homeHeader">
+            <h1>Simple Sweets</h1><br>
+            <p>Your go-to destination for delicious<br>and easy-to-make sweet recipes.</p>
+
+            <!--search bar-->
+            <div class="homeSearchBar">
+                <input id="homeSearch" type="text" placeholder="Search recipes...">
+                <button id="homeSearchBtn" type="submit">&#8981;</button>
+            </div>
+        </div>    
+    </section>
+
+    <!--SECTION 2-->
+
+    <section class="sectionTwo">
+
+        <p class="sectionHeader">Collections</p>
+
+        <div class="buttonContainer">
+            <div class="button">
+                <button id="leftButton">&#x2039;</button>
+                <button id="rightButton">&#x203A;</button>
+            </div>
+        </div>
+
+        <!--boxes for collections-->
+        <div id="collectionList"></div>
+
+        <!--dot indicators for current collection "page"-->
+        <div class="dotContainer">
+            <div class="dots">
+                <div class="dot dotActive"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--SECTION 3-->
+
+    <section class="sectionThree">
+            
+        <p class="sectionHeader">Featured</p>
+
+        <!--boxes for featured recipes-->
+        <div id="featuredList"></div>
+
+        <!--see more button-->
+        <button id="moreButton"><a href="./HTML/recipes.html">ALL RECIPES</a></button>
+    </section>
+</main>
+
+    <!--------------------------------FOOTER--------------------------------->
+    <footer>
+
+        <div class="newsletter">
+        <div class="footerImg"></div>
+            <div class="newsletterContent">
+                <p>Subscribe for our latest recipes!</p>
+                <div class="footerBarContainer">
+                    <input id="newsletterBar" type="text" placeholder="Your email address here">
+                    <button id="newsletterBtn" type="submit">&#8981;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footerLinks">
+            <p> | </p>
+            <a href="index.html">HOME</a>
+            <a href="./HTML/recipes.html">RECIPES</a>
+            <a href="./HTML/cookbook.html">COOKBOOK</a>
+            <a href="./HTML/about.html">ABOUT</a>
+            <a href="./HTML/contact.html">CONTACT</a>
+            <p> | </p>
+        </div>
+
+        <p id="copyright">AI and 3rd party images used for educational purposes</p>
+    </footer>
+
+<script src="./JavaScript/home.js"></script>
+
+</body>
+</html>
