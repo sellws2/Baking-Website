@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" type="text/CSS" href="./CSS/style.css">
+    <link rel="stylesheet" type="text/CSS" href="../CSS/style.css">
 
 </head>
 
@@ -19,16 +19,16 @@
 
             <!--website name/logo-->
             <div class="logo"> 
-                <p><a href="index.html">SIMPLE SWEETS</a></p>
+                <p><a href="../index.html">SIMPLE SWEETS</a></p>
             </div>
 
             <!--navigation links-->
             <div class="navLinks">
-                <a href="index.html">HOME</a>
-                <a href="./HTML/recipes.html">RECIPES</a>
-                <a href="./HTML/cookbook.html">COOKBOOK</a>
-                <a href="./HTML/about.html">ABOUT</a>
-                <a href="./HTML/contact.html">CONTACT</a>
+                <a href="../index.html">HOME</a>
+                <a href="recipes.html">RECIPES</a>
+                <a href="cookbook.html">COOKBOOK</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
             </div>
 
             <!--nav search bar-->
@@ -46,11 +46,11 @@
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closeIcon" onclick="closeNav()">&times;</a>
             <div class="overlayContent">
-                <a href="index.html">HOME</a>
+                <a href="../index.html">HOME</a>
                 <div class="dropdown">
                 <a href="#" class="dropdownToggle">RECIPES &#9662;</a>
                     <div class="dropdownContent">
-                        <a href="./HTML/recipes.html">All Recipes</a>
+                        <a href="recipes.html">All Recipes</a>
                         <!--link opens recipes.html with a filter-->
                         <a href="#" class="filterLink" collectionId="1">Cookies</a>
                         <a href="#" class="filterLink" collectionId="2">Cupcakes</a>
@@ -62,9 +62,9 @@
                         <a href="#" class="filterLink" collectionId="8">Cheesecakes</a>
                     </div>
                 </div>
-                <a href="./HTML/cookbook.html">COOKBOOKS</a>
-                <a href="./HTML/about.html">ABOUT</a>
-                <a href="./HTML/contact.html">CONTACT</a>
+                <a href="cookbook.html">COOKBOOKS</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
             </div>
         </div>
 
@@ -99,13 +99,13 @@
                 const dropdownToggle = document.querySelector(".dropdownToggle");
                 const dropdownContent = document.querySelector(".dropdownContent");
 
-                //Adds click event listener to toggle display of dropdown
+                //adds click event listener to toggle display of dropdown
                 dropdownToggle.addEventListener("click", function(event) {
                     event.preventDefault(); // Prevents the link from navigating
                     dropdownContent.classList.toggle("show");
                 });
             });
-        </script>    
+        </script>   
 
         <!--javascript for curtain menu recipe collection list-->
         <script>
@@ -119,12 +119,12 @@
 
                         const collectionId = link.getAttribute("collectionId");
                         // Opens recipes.html with the collectionId as a URL parameter
-                        window.location.href = `./HTML/recipes.html?filter=${collectionId}`;
+                        window.location.href = `recipes.html?filter=${collectionId}`;
                     });
                 });
             });
         </script>
-        
+
     <!--------------------------------MAIN----------------------------------->
 
 <main>
@@ -135,6 +135,7 @@
             <h1>Simple Sweets</h1><br>
             <p>Your go-to destination for delicious<br>and easy-to-make sweet recipes.</p>
 
+
             <!--search bar-->
             <div class="homeSearchBar">
                 <input id="homeSearch" type="text" placeholder="Search recipes...">
@@ -143,46 +144,26 @@
         </div>    
     </section>
 
-    <!--SECTION 2-->
+    <!--SECTION 2: recipe detail-->
 
-    <section class="sectionTwo">
+    <section class="sectionTwoRecipeDetail">
 
-        <p class="sectionHeader">Collections</p>
-
-        <div class="buttonContainer">
-            <div class="button">
-                <button id="leftButton">&#x2039;</button>
-                <button id="rightButton">&#x203A;</button>
-            </div>
-        </div>
+        
 
         <!--boxes for collections-->
-        <div id="collectionList"></div>
+        <div id="recipeDetailContainer"></div>
 
-        <!--dot indicators for current collection "page"-->
-        <div class="dotContainer">
-            <div class="dots">
-                <div class="dot dotActive"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
+        
     </section>
 
     <!--SECTION 3-->
 
     <section class="sectionThree">
             
-        <p class="sectionHeader">Featured</p>
+        <div id="comments"></div>
 
-        <!--boxes for featured recipes-->
-        <div id="featuredList"></div>
-
-        <!--see more button-->
-        <button id="moreButton"><a href="./HTML/recipes.html">ALL RECIPES</a></button>
+        
     </section>
-
 </main>
 
     <!--------------------------------FOOTER--------------------------------->
@@ -201,18 +182,18 @@
 
         <div class="footerLinks">
             <p> | </p>
-            <a href="index.html">HOME</a>
-            <a href="./HTML/recipes.html">RECIPES</a>
-            <a href="./HTML/cookbook.html">COOKBOOK</a>
-            <a href="./HTML/about.html">ABOUT</a>
-            <a href="./HTML/contact.html">CONTACT</a>
+            <a href="../index.html">HOME</a>
+            <a href="recipes.html">RECIPES</a>
+            <a href="cookbook.html">COOKBOOK</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
             <p> | </p>
         </div>
 
         <p id="copyright">AI and 3rd party images used for educational purposes</p>
     </footer>
 
-<script src="./JavaScript/home.js"></script>
+<script src="../JavaScript/recipeDetail.js" type="module"></script>
 
 </body>
 </html>

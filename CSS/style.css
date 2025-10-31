@@ -1,0 +1,1435 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------------------------SMALL-SCREENS---------------------------------------*/
+
+/*--mobile: nav--*/
+
+nav {
+    height: 5vh;
+    background-color: white;
+    vertical-align: middle;
+}
+.logo {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: left;
+    margin: 10px 0px 0px 10px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.logo a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+.navLinks {
+    display: none;
+    /*hidden navigation links on small screens*/
+}
+.navSearchBar {
+    display: none;
+    /*hidden navigation search bar on small screens*/
+}
+#hamburgerMenu {  
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    margin: 5px 8px 0px 0px;
+    float: none;
+}
+#hamburgerMenu p {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/*--mobile: curtain menu--*/
+
+.overlay {
+    height: 100%;
+    width: 65%;
+    display: none; /*block: show; none: hide*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 3; /*make this layer sit on top of other layer*/
+    border: 1px solid black;
+}
+.overlayContent {
+    position: relative;
+    width: 100%;
+    top: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.overlay a {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    display: block;
+    font-family: Verdana;
+    font-weight: bold;
+}
+.closeIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    font-size: 30px;
+    margin: 3px 0px 0px 0px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+.overlay a:hover {
+    color: rgb(156, 14, 87);
+}
+
+/*--mobile: dropdown in curtain menu--*/
+
+.dropdown {
+  width: 100%;
+  text-align: left;
+}
+.dropdownToggle {
+  display: block;
+  text-decoration: none;
+  padding: 8px;
+  transition: 0.3s;
+}
+.dropdownContent {
+  overflow: hidden; /* hide overflow content during transitions */
+  transition: max-height 0.4s ease-out;
+  max-height: 0;
+}
+.dropdownContent a {
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    transition: 0.3s;
+    font-family: Verdana;
+    font-weight: normal;
+}
+.dropdownContent.show {
+  max-height: 500px;
+}
+
+/*--mobile: section one--*/
+
+.sectionOne {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    background-image: url("../Images/home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 20%;
+    z-index: 1;
+}
+#homeHeader {
+    position: relative;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10vh;
+    font-family: Verdana;
+}
+.homeSearchBar {
+    display: block;
+    text-align: center;
+    margin-top: 85px;
+    font-size: 14px;
+    font-family: Verdana;
+}
+#homeSearch {
+    text-align: left;
+    border: 1.5px solid black;
+    border-radius: 50px;
+    padding: 10px 10px 10px 10px;
+    font-size: 14px;
+    height: 40px;
+    width: 80%;
+}
+#homeSearchBtn {
+    border-radius: 100%;
+    background-color: #b6ea9c;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-left: -39px;
+    margin-bottom: 3px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*--mobile: section two--*/
+
+.sectionTwo {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    /*background-image: url("../Images/flowers.jpg");*/
+    /*background-color: white;*/
+    background-size: contain;
+    min-height: 80vh;
+    width: 100%;
+}
+.sectionTwo .sectionHeader {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    font-family: Verdana;
+    height: 50px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 18px;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%; 
+    height: 60px;
+}
+.button {
+    display: flex;
+    width: 75px;
+    height: 65%;
+    margin-top: 18px;  
+    gap: 1px;
+}
+#leftButton, #rightButton {
+    width: 40px;
+    height: 100%;
+    padding-bottom: 3px;
+    font-size: 26px;
+    border: 1.5px solid black;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: white;
+    z-index: 0;
+}
+#collectionList {
+    display: grid;
+    position: static;
+    /*test code below to show div area
+    /*border: solid black;*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px 10px;
+    width: 90%;
+    justify-content: center;
+}
+.collectionBox {
+    display: block;
+    border: 1.5px solid black;
+    width: 100%;
+    min-height: 300px;
+    padding: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+.collectionBox img {
+    display: block;
+    width: 100%;
+}
+.collectionBox p {
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana; 
+    font-size: 14px;
+    padding: 6px;
+}
+.collectionBox a {
+    text-decoration: none;
+}
+.dotContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    position: static;
+}
+.dots {
+    display: flex;
+    justify-content: center; 
+    gap: 10px;
+}
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #000000; /*inactive dot color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+.dotActive {
+  background-color:rgb(156, 14, 87); /*active dot color */
+  transform: scale(1.3); /*slightly larger active dot */
+}
+.dotContainer .dot:nth-child(3) {
+    display: none;
+}
+
+/*--mobile: section three--*/
+
+.sectionThree {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    /*background-color: white;*/
+    background-size: cover;
+    width: 100%;
+}
+.sectionThree .sectionHeader {
+    display: none;
+}
+#featuredList {
+    display: none;
+}
+#moreButton {
+    display: flex;
+    position: relative;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: #b6ea9c;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#moreButton a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/*--mobile: footer--*/
+
+footer {
+    min-height: 15vh;
+    background-color: #b6ea9c;
+}
+.newsletter {
+    display: flex;
+    padding: 10px;
+    /*border: 1px solid black;*/
+    font-family: Verdana;
+    height: 70px;
+}
+.footerImg {
+    background-image: url("../Images/applePie.jpg");
+    border: 1px solid black;
+    background-size: cover;
+    min-width: 60px;
+    min-height: 60px;
+    margin-left: 20px;
+}
+.newsletterContent {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.newsletter p {
+    font-size: 13px; 
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+.footerBarContainer {
+    position: relative;
+    min-width: 230px;
+}
+#newsletterBar {
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    border: 1.5px solid black;
+    border-radius: 50px;
+    padding: 10px 10px 10px 10px;
+    font-size: 12px;
+}
+#newsletterBtn {
+    position: absolute;
+    border-radius: 100%;
+    background-color: #b6ea9c;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    height: 23px;
+    width: 23px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 3.5px 0px 0px -26.5px;
+}
+.footerLinks {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15px;
+    justify-content: center;
+    margin: 5px;
+}
+.footerLinks a {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-family: Verdana;
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+}
+.footerLinks p {
+    display: none;
+}
+#copyright {
+    text-align: center;
+    font-size: 8px;
+    font-family: Verdana;
+    color: green;
+    margin: 5px;
+}
+
+/*-------------------------mobile: recipes.html-------------------*/
+
+/*--mobile - recipes: section one--*/
+
+/*--mobile - recipes: section two--*/
+
+.sectionTwoRecipes {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.filterContainer {
+    display: block;
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.filterBtn {
+    height: 50px;
+    width: 110px;
+    font-family: Verdana;
+    border: none;
+    border-radius: 50px;
+    padding: 2px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    gap: 5px;
+    background-color: #b6ea9c;
+    cursor: pointer;
+}
+.sectionThreeRecipes {
+    display: column;
+    height: fit-content;
+    width: 100%;
+}
+#recipesList {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.recipesBox {
+    min-height: 300px;
+    display: block;
+    border: 1.5px solid black;
+    width: 100%;
+    padding: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+.recipesBox img {
+    height: 90%;
+    width: 100%;
+}
+.recipesBox p {
+    font-family: Verdana;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px;
+}
+.pageContainer {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    padding-bottom: 6px;
+}
+.pageContainer button {
+    display: block;
+    border-radius: 50%;
+    border: none;
+    background-color: #b6ea9c;
+    font-weight: bold;
+    color: black;
+    padding: 12px 14px;
+    font-size: 14px;
+    margin: 2.5px;
+    cursor: pointer;
+}
+.pageContainer :active {
+    background-color: lightgray;
+}
+
+/*--------------------------mobile: recipeDetail.html-----------*/
+
+/*--mobile - recipeDetail: section one */
+
+/*--mobile - recipeDetail: section two*/
+
+.sectionTwoRecipeDetail {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+}
+#recipeDetailContainer {
+    width: 95%;
+    font-family: Verdana;
+    padding: 5px;
+}
+.recipeTitle {
+    width: 100%;
+    font-size: 16px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.recipeDesc {
+    font-size: 16px;
+}
+.recipeDesc ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.recipeImg {
+    margin: 5px;
+}
+.recipeIngre {
+    font-size: 16px;
+    margin-left: 20px;
+}
+.recipeInstr {
+    font-size: 16px;
+    margin-left: 20px;
+}
+#recipeHeading {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -20px;
+}
+
+/*------------------mobile: cookbook.html----------------*/
+
+/*--mobile - cookbook: section one--*/
+
+/*--mobile - cookbook: section two--*/ 
+
+.sectionTwoCookbook {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#cookbookList {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 550px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; 
+    width: 85%;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.cookbookBox {
+    display: block;
+    border: 1.5px solid black;
+    padding: 2px;
+    background-color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+.cookbookBox img {
+    display: block;
+    width: 100%;
+    height: 60%;
+}
+.cookbookBox h1 {
+    font-family: Verdana;
+    font-size: 20px;
+    color: black;
+    text-transform: uppercase;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.cookbookBox p {
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    font-family: Verdana; 
+    font-size: 14px;
+    margin-left: 10px;
+}
+#price {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+/*-----------------------mobile: about.html-------------------*/
+
+/*--mobile - about: section one--*/
+
+.aboutText {
+    border: 1px solid black;
+    width: 360px;
+    margin: 35px;
+    padding: 25px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+.aboutText p {
+    font-family: Verdana;
+    font-size: 16px;
+}
+
+/*--mobile - about: section two--*/
+
+.sectionTwoAbout {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    background-size: contain;
+    min-height: fit-content;
+    width: 100%;
+}
+.sectionTwoAbout .sectionHeader {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    font-family: Verdana;
+    height: 50px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 22px;
+}
+.sectionTwoAbout #featuredList {
+    display: grid;
+    position: static;
+    /*test code below to show div area*/
+    /*border: 1px solid black;*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    width: 90%;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.sectionTwoAbout .featuredBox {
+    display: block;
+    border: 1.5px solid black;
+    width: 100%;
+    min-height: 290px;
+    padding: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+.sectionTwoAbout .featuredBox img {
+    display: block;
+    width: 100%;
+}
+.sectionTwoAbout .featuredBox p {
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana; 
+    font-size: 14px;
+    padding: 6px;
+}
+
+/*--mobile - about: section three--*/
+
+.sectionThreeAbout {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    background-size: cover;
+    width: 100%;
+}
+
+/*----------------------- mobile: contact.html----------------*/
+
+/*--mobile - contact: section one--*/
+.sectionOneContact {
+    display: flex;
+    background-color: white;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+    background-image: url("../Images/flowers.jpg");
+    background-size: contain;
+    z-index: -2;
+}
+.contactForm input, textarea {
+    padding: 10px;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-family: Verdana;
+    font-size: 13px;
+}
+.contactSubmitContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+}
+#contactSubmitBtn{
+    background-color:#b6ea9c;
+    color: black;
+    padding: 12px 25px;
+    border: 1.5px solid #9ec988;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 14px;
+}
+#contactSubmitBtn:hover {
+  background-color: white;
+}
+.contactForm {
+    border-radius: 30px;
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    border: 1px solid black;
+    height: 55%;
+    justify-self: center;
+}
+.row {
+    gap: 20px;
+    display: inline-flex;
+    vertical-align: middle;
+    width: 100%;
+    font-family: Verdana;
+}
+.row input, textarea {
+    width: 100%;
+}
+label {
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------MEDIUM SCREENS---------------------------------------*/
+@media screen and (min-width: 426px) {
+
+/*--tablet: nav--*/
+
+nav {
+    background-color: transparent;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+.logo {
+    display: inline-flex;
+}
+.logo a {
+    font-size: 18px;
+}
+.navLinks {
+    display: flex;
+    margin-left: 210px;
+    vertical-align: middle;
+    width: 380px;
+}
+.navLinks a {
+    margin-top: 14px;
+    padding-right: 20px;
+    font-size: 13px;
+    display: flex;
+    vertical-align: middle;
+    color: black;
+    text-decoration: none;
+    font-family: Verdana;
+}
+.navSearchBar {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 9px;
+    font-family: Verdana;
+    font-size: 14px;
+}
+#navSearch {
+    text-align: left;
+    border: 1.5px solid black;
+    border-radius: 50px;
+    padding: 10px 10px 10px 10px;
+    font-size: 14px;
+    height: 26px;
+    width: 73%;
+    vertical-align: middle;
+}
+#navSearchBtn {
+    border-radius: 100%;
+    background-color: #b6ea9c;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    margin-left: -23px;
+    margin-top: 2.8px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+#hamburgerMenu {  
+    margin: 5px 10px 0px 0px;
+}
+
+/*--tablet: curtain menu--*/
+
+.closeIcon {
+    margin: 3px 8px 0px 0px;
+}
+
+/*--tablet: section one--*/
+
+.sectionOne {
+    height: 55vh;
+    background-position-y: 35%;
+}
+#homeSearch {
+    display: none;
+}
+#homeSearchBtn {
+    display: none;
+}
+
+/*--tablet: section two--*/
+
+.sectionTwo {
+    min-height: 70vh;
+}
+.buttonContainer {
+    width: 85%; 
+}
+.button {
+    width: 80px;
+}
+#collectionList {
+    /*test code below to show div area*/
+    /*border: 1px solid black;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    width: 85%;
+}
+.collectionBox {
+    height: 340px;
+    padding: 2px;
+}
+.collectionBox img {
+    height: 90%;
+}
+.collectionBox p {
+    padding: 10px;
+}
+.dotContainer {
+    height: 40px;
+    margin-top: 4px;
+}
+.dots {
+    display: flex;
+    justify-content: center; 
+    gap: 10px;
+}
+.dotContainer .dot:nth-child(3) {
+    display: block;
+}
+
+/*--tablet: section three--*/
+
+.sectionThree {
+    min-height: 70vh;
+}
+.sectionThree .sectionHeader {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-transform: uppercase;
+    font-family: Verdana;
+    font-size: 22px;
+    margin-top: 6px;
+}
+#featuredList {
+    display: grid;
+    position: static;
+    /*test code below to show div area*/
+    /*border: 1px solid black;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    width: 85%;
+    justify-content: center;
+}
+.featuredBox {
+    display: block;
+    border: 1.5px solid black;
+    width: 100%;
+    min-height: 340px;
+    padding: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+.featuredBox img {
+    display: block;
+    width: 100%;
+}
+.featuredBox p {
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana; 
+    font-size: 14px;
+    padding: 6px;
+}
+#moreButton {
+    display: none;
+}
+#moreButton a {
+    display: none;
+}
+
+/*--tablet: footer--*/
+
+footer {
+    min-height: 20vh;
+}
+.newsletter {
+    height: 90px;
+    width: 318px;
+    margin-top: 15px;
+    margin-left: 15px;
+    position: absolute;
+}
+.footerImg {
+    margin-left: 5px;
+}
+.newsletterContent {
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.newsletter p {
+    margin-bottom: 4px;
+    margin-left: 4px;
+}
+#newsletterBar {
+    width: 95%;
+    height: 35px;
+}
+#newsletterBtn {
+    font-size: 18px;
+    height: 25px;
+    width: 25px;
+    margin: 5px 0px 0px -29px;
+}
+.footerLinks {
+    position: absolute;
+    height: 20px;
+    right: 30px;
+    width: 50%;
+    margin-top: 60px;
+}
+.footerLinks a {
+    font-size: 14px;
+    margin: 0px 7px 0px 7px;
+}
+.footerLinks p {
+    display: flex;
+    font-size: 34px;
+    margin-top: -14px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+#copyright {
+    display: flex;
+    font-size: 10px;
+    position: absolute;
+    justify-self: center;
+    margin-top: 112px;
+}
+
+/*---------------------------tablet: recipes.html----------------*/
+
+/*--tablet - recipes: section one--*/
+
+/*--tablet - recipes: section two--*/
+
+.filterContainer {
+    width: 90%;
+    position: flex;
+}
+.filterBtn {
+    height: 40px;
+}
+#recipesList {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+/*--------------------tablet: recipeDetail.html----------------------*/
+
+/*--tablet - recipeDetail: section one */
+
+/*--tablet - recipeDetail: section two*/
+
+/*--------------------tablet: cookbook.html-------------------*/
+
+/*--tablet - cookbook: section one--*/
+
+
+
+/*--tablet - cookbook: section two--*/ 
+
+#cookbookList {
+    flex-direction: row;
+    min-height: 300px;
+    grid-template-columns: 3fr;
+    grid-template-rows: 1fr; 
+    width: 90%;
+}
+.cookbookBox Img {
+    height: 200px;
+}
+
+/*--------------------tablet: about.html----------------------*/
+
+/*--tablet - about: section one--*/
+
+.aboutText {
+    width: 500px;
+}
+
+/*--tablet - about: section two--*/
+
+
+.sectionTwoAbout #featuredList {
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+/*--tablet - about: section three--*/
+
+.sectionThreeAbout {
+    display: none;
+}
+
+/*--tablet: contact.html--*/
+
+/*--tablet - contact: section one--*/
+
+.sectionOneContact nav {
+    width: 100%;
+}
+.sectionOneContact {
+    display: block;
+    height: 110vh;
+    background-image: none;
+}
+.contactForm {
+    width: 80%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------LARGE-SCREENS---------------------------------------*/
+@media screen and (min-width: 769px) {
+
+/*--pc: nav--*/
+
+.logo a {
+    font-size: 22px;
+}
+.navLinks {
+    display: flex;
+    margin-left: 500px;
+    vertical-align: middle;
+    width: 48%;
+    margin-top: 4.5px;
+}
+.navLinks a {
+    margin-top: 10px;
+    padding-right: 50px;
+    font-size: 18px;
+    display: flex;
+    vertical-align: middle;
+    color: black;
+    text-decoration: none;
+    font-family: Verdana;
+}
+.navSearchBar {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 9px;
+}
+#navSearch {
+    text-align: left;
+    border: 1.5px solid black;
+    border-radius: 50px;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    height: 30px;
+    width: 95%;
+    vertical-align: middle;
+}
+#navSearchBtn {
+    border-radius: 100%;
+    background-color: #b6ea9c;
+    border: 1px solid black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-left: -27.5px;
+    margin-top: 3px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/*--pc: curtain menu--*/
+
+.overlay {
+    width: 40%;
+}
+
+/*--pc: dropdown in curtain menu--*/
+
+/*--pc: section one--*/
+
+.sectionOne {
+    height: 70vh;
+    background-position-y: 38%;
+}
+#homeHeader {
+    font-size: 18px;
+}
+
+/*--pc: section two--*/
+
+.sectionTwo {
+    height: 70vh;
+}
+.sectionTwo .sectionHeader {
+    margin-top: 16px;
+    font-size: 26px;
+}
+.buttonContainer {
+    width: 77.7%; 
+    height: 80px;
+}
+.button {
+    width: 80px;
+    height: 60%;
+    margin-top: 36px;
+}
+#leftButton, #rightButton {
+    width: 30px;
+    height: 80%;
+}
+#collectionList {
+    grid-template-columns: repeat(4, 1fr);
+    width: 75%;
+}
+.collectionBox {
+    height: 400px;
+}
+.collectionBox p {
+    font-size: 16px;
+}
+.dotContainer .dot:nth-child(3) {
+    display: none;
+}
+
+/*--pc: section three--*/
+
+.sectionThree {
+    height: 70vh;
+}
+.sectionThree .sectionHeader {
+    font-size: 26px;
+    margin-top: -5px;
+}
+#featuredList {
+    width: 75%;
+    grid-template-columns: repeat(4, 1fr);
+}
+.featuredBox {
+    min-height: 400px;
+}
+.featuredBox p {
+    font-size: 16px;
+}
+
+/*--pc: footer--*/
+
+.newsletter {
+    height: 90px;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 120px;
+}
+.footerImg {
+    margin-left: 20px;
+}
+.newsletterContent {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.newsletter p {
+    font-size: 16px; 
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+.footerBarContainer {
+    min-width: 300px;
+    margin-left: 25px;
+}
+#newsletterBar {
+    width: 100%;
+    font-size: 14px;
+}
+#newsletterBtn {
+    font-size: 20px;
+    height: 27.5px;
+    width: 28px;
+    margin: 3.5px 0px 0px -32.5px;
+}
+.footerLinks {
+    right: 120px;
+    margin-top: 70px;
+}
+.footerLinks a {
+    font-size: 16px;
+    margin: 0px 25px 0px 25px;
+}
+.footerLinks p {
+    font-size: 38px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#copyright {
+    font-size: 12px;
+    margin-top: 130px;
+}
+
+/*----------------------pc: recipe.html--------------------------*/
+
+/*--pc: recipe: section two--*/
+
+.filterContainer {
+    width: 50%;
+}
+#recipesList {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/*--------------------pc: recipeDetail.html----------------------*/
+
+/*--pc - recipeDetail: section one */
+
+/*--pc - recipeDetail: section two*/
+
+/*--------------------pc: cookbook.html-------------------*/
+
+/*--pc - cookbook: section one--*/
+
+/*--pc - cookbook: section two--*/ 
+
+#cookbookList {
+    gap: 20px;
+    min-height: 430px;
+}
+.cookbookBox Img {
+    height: 300px;
+}
+/*-----------------------pc: about.html------------------------*/
+
+/*--pc - about: section one--*/
+
+.aboutText {
+    width: 850px;
+}
+.aboutText p {
+    font-size: 18px;
+}
+
+/*--pc - about: section two--*/
+
+.sectionTwoAbout .sectionHeader {
+    font-size: 26px;
+}
+.sectionTwoAbout #featuredList {
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    margin-bottom: 65px;
+}
+.sectionTwoAbout .featuredBox p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+/*-----------------------pc: contact.html-----------------------*/
+
+/*--pc - contact: section one--*/
+
+.contactForm {
+    width: 60%;
+}
+
+
+
+}
+
+
+
+
+
+
